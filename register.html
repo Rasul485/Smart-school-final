@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Регистрация в Smart School — начните использовать платформу">
+  <meta name="keywords" content="Smart School, регистрация, образование, школа">
+  <title>Регистрация - Smart School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-section">
+        <a href="index.html" class="btn-home"><i class="fas fa-home"></i> На главную</a>
+        <div class="logo">Smart School</div>
+        <p class="slogan">Управление школой стало проще!</p>
+      </div>
+      <nav class="nav">
+        <a href="about.html">О нас</a>
+        <a href="features.html">Функции</a>
+        <a href="contact.html">Контакты</a>
+        <a href="login.html" class="btn-orange">Войти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Register -->
+  <section class="register">
+    <div class="container register-container" data-aos="zoom-in">
+      <div class="register-card">
+        <div class="register-illustration">
+          <img src="https://img.icons8.com/color/96/000000/school-building.png" alt="Smart School" />
+        </div>
+        <div class="register-content">
+          <h1 class="register-title" data-aos="fade-down">Добро пожаловать в Smart School!</h1>
+          <p class="register-subtitle" data-aos="fade-right" data-aos-delay="100">
+            Создайте аккаунт и начните управлять своим обучением легко и удобно.
+          </p>
+          <form class="register-form" autocomplete="off" data-aos="fade-up" data-aos-delay="200">
+            <div class="form-group">
+              <input type="text" placeholder="Ваше имя" required>
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email" required>
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Пароль" required>
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Повторите пароль" required>
+              <i class="fas fa-lock"></i>
+            </div>
+            <button class="btn-orange btn-glow" type="submit">
+              <i class="fas fa-user-plus"></i> Зарегистрироваться
+            </button>
+            <div class="divider"><span>или</span></div>
+            <div class="social-register">
+              <button type="button" class="btn-social google">
+                <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google" style="vertical-align:middle; margin-right:8px;">
+                Google
+              </button>
+              <button type="button" class="btn-social vk">
+                <img src="https://img.icons8.com/color/24/000000/vk-com.png" alt="VK" style="vertical-align:middle; margin-right:8px;">
+                VK
+              </button>
+              <button type="button" class="btn-social telegram">
+                <img src="https://img.icons8.com/color/24/000000/telegram-app.png" alt="Telegram" style="vertical-align:middle; margin-right:8px;">
+                Telegram
+              </button>
+            </div>
+            <p class="register-login-link">
+              Уже есть аккаунт? <a href="login.html">Войдите</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Smart School</h3>
+          <p>© 2025 Smart School. Все права защищены.<br>ТОО "Smart School", БИН 1234567890.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Навигация</h3>
+          <p><a href="about.html">О нас</a></p>
+          <p><a href="features.html">Функции</a></p>
+          <p><a href="contact.html">Контакты</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Контакты</h3>
+          <p><i class="fas fa-envelope"></i> support@smartschool.kz</p>
+          <p><i class="fas fa-phone"></i> +7 (727) 123-45-67</p>
+        </div>
+        <div class="footer-section">
+          <h3>Социальные сети</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      const registerForm = document.querySelector('.register-form');
+      if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const inputs = registerForm.querySelectorAll('input');
+          const name = inputs[0].value.trim();
+          const email = inputs[1].value.trim();
+          const password = inputs[2].value;
+          const passwordRepeat = inputs[3].value;
+
+          // Клиентская валидация
+          if (name.length < 2) {
+            alert('Имя должно содержать минимум 2 символа.');
+            return;
+          }
+          if (!email.includes('@') || email.length < 5) {
+            alert('Пожалуйста, введите корректный email.');
+            return;
+          }
+          if (password.length < 6) {
+            alert('Пароль должен содержать минимум 6 символов.');
+            return;
+          }
+          if (password !== passwordRepeat) {
+            alert('Пароли не совпадают.');
+            return;
+          }
+
+          alert('Регистрация выполнена успешно! (демо)');
+          window.location.href = 'login.html'; // Переход на login.html
+        });
+      }
+    });
+  </script>
+</body>
+</html>

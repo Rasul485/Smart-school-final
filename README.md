@@ -1,1 +1,1 @@
-# Smart-school-final
+# Smart-school

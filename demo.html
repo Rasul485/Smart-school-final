@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Демо Smart School — попробуйте платформу">
+  <meta name="keywords" content="Smart School, демо, образование, школа">
+  <title>Демо - Smart School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-section">
+        <a href="index.html" class="btn-home"><i class="fas fa-home"></i> На главную</a>
+        <div class="logo">Smart School</div>
+        <p class="slogan">Управление школой стало проще!</p>
+      </div>
+      <nav class="nav">
+        <a href="about.html">О нас</a>
+        <a href="features.html">Функции</a>
+        <a href="contact.html">Контакты</a>
+        <a href="login.html" class="btn-orange">Войти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo -->
+  <section class="demo">
+    <div class="container">
+      <h1 data-aos="fade-up">Демо Smart School</h1>
+      <div class="demo-content" data-aos="fade-up" data-aos-delay="100">
+        <h2>Профиль ученика</h2>
+        <div class="profile-info">
+          <p><strong>Имя:</strong> Азамат Сериков</p>
+          <p><strong>Класс:</strong> 8Б</p>
+          <p><strong>Школа:</strong> Школа №5, Алматы</p>
+          <p><strong>Посещаемость:</strong> 98% <span style="color:green;">&#9679;</span></p>
+            <p><strong>Активность:</strong> <span style="color:#ff9800;">Высокая</span></p>
+          </div>
+          <h2>Оценки</h2>
+          <table class="grades-table">
+            <thead>
+            <tr>
+              <th>Предмет</th>
+              <th>Оценка</th>
+              <th>Дата</th>
+              <th>Комментарий</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Математика</td>
+              <td><span style="color:green;font-weight:bold;">5</span></td>
+              <td>25.04.2025</td>
+              <td>Отличная работа на контрольной!</td>
+            </tr>
+            <tr>
+              <td>Литература</td>
+              <td><span style="color:orange;font-weight:bold;">4</span></td>
+              <td>24.04.2025</td>
+              <td>Активное участие в обсуждении.</td>
+            </tr>
+            <tr>
+              <td>Английский язык</td>
+              <td><span style="color:green;font-weight:bold;">5</span></td>
+              <td>23.04.2025</td>
+              <td>Отличное произношение!</td>
+            </tr>
+            <tr>
+              <td>Физика</td>
+              <td><span style="color:orange;font-weight:bold;">4</span></td>
+              <td>22.04.2025</td>
+              <td>Есть потенциал для улучшения.</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="grades-summary" style="margin: 10px 0;">
+            <strong>Средний балл:</strong> <span style="color:#2196f3;">4.5</span>
+          </div>
+          <h2>Расписание на сегодня</h2>
+          <table class="schedule-table">
+            <thead>
+            <tr>
+              <th>Время</th>
+              <th>Предмет</th>
+              <th>Кабинет</th>
+              <th>Учитель</th>
+              <th>Заметка</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>08:30 – 09:15</td>
+              <td>Математика</td>
+              <td>301</td>
+              <td>Иванова Т.В.</td>
+              <td><span style="color:#4caf50;">Контрольная работа</span></td>
+            </tr>
+            <tr>
+              <td>09:25 – 10:10</td>
+              <td>Литература</td>
+              <td>205</td>
+              <td>Сергеев А.П.</td>
+              <td>Чтение стихотворения</td>
+            </tr>
+            <tr>
+              <td>10:20 – 11:05</td>
+              <td>Английский язык</td>
+              <td>112</td>
+              <td>Brown S.</td>
+              <td>Устный опрос</td>
+            </tr>
+            <tr>
+              <td>11:15 – 12:00</td>
+              <td>Физика</td>
+              <td>410</td>
+              <td>Ким Е.В.</td>
+              <td><span style="color:#ff9800;">Лабораторная работа</span></td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="schedule-note" style="margin-top:10px;">
+            <i class="fas fa-info-circle" style="color:#2196f3;"></i>
+            <span>Не забудьте взять тетрадь по физике и сборник задач по математике!</span>
+          </div>
+          </tbody>
+        </table>
+      </div>
+     
+</section>
+
+<script>
+  async function fetchEvents() {
+    try {
+      const response = await fetch('http://localhost:3000/api/events');
+      const events = await response.json();
+      const list = document.getElementById('event-list');
+      events.forEach(event => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${event.date}</strong> — ${event.title}`;
+        list.appendChild(li);
+      });
+    } catch (error) {
+      console.error('Ошибка при загрузке событий:', error);
+    }
+  }
+
+  fetchEvents();
+</script>
+
+        </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Smart School</h3>
+          <p>© 2025 Smart School. Все права защищены.<br>ТОО "Smart School", БИН 1234567890.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Навигация</h3>
+          <p><a href="about.html">О нас</a></p>
+          <p><a href="features.html">Функции</a></p>
+          <p><a href="contact.html">Контакты</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Контакты</h3>
+          <p><i class="fas fa-envelope"></i> support@smartschool.kz</p>
+          <p><i class="fas fa-phone"></i> +7 (727) 123-45-67</p>
+        </div>
+        <div class="footer-section">
+          <h3>Социальные сети</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты Smart School — свяжитесь с нами">
+  <meta name="keywords" content="Smart School, контакты, образование, школа">
+  <title>Контакты - Smart School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-section">
+        <a href="index.html" class="btn-home"><i class="fas fa-home"></i> На главную</a>
+        <div class="logo">Smart School</div>
+        <p class="slogan">Управление школой стало проще!</p>
+      </div>
+      <nav class="nav">
+        <a href="about.html">О нас</a>
+        <a href="features.html">Функции</a>
+        <a href="contact.html" class="active">Контакты</a>
+        <a href="login.html" class="btn-orange">Войти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact -->
+  <section class="contact">
+    <div class="container">
+      <h1 data-aos="fade-up">Свяжитесь с нами</h1>
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+          <h2>Контактная информация</h2>
+          <p><i class="fas fa-envelope"></i> support@smartschool.kz</p>
+          <p><i class="fas fa-phone"></i> +7 (727) 123-45-67</p>
+          <p><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая, 123</p>
+        </div>
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+          <h2>Напишите нам</h2>
+          <form>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <select required>
+              <option value="" disabled selected>Как вы узнали о нас?</option>
+              <option>Соцсети</option>
+              <option>Реклама</option>
+              <option>Рекомендации</option>
+            </select>
+            <textarea placeholder="Сообщение" required></textarea>
+            <a href="mailto:support@smartschool.kz" class="btn-orange">Отправить</a>
+          </form>
+        </div>
+      </div>
+      <div class="contact-map" data-aos="fade-up" data-aos-delay="300">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019665536793!2d76.92343021530663!3d43.23894997913762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369314e0b4067%3A0x9c2b6f7e5e5f8c5!2sAbay%20Ave%20123%2C%20Almaty%2C%20Kazakhstan!5e0!3m2!1sen!2sus!4v1698765432109!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- Creative Feature: Animated Fun Fact Section -->
+  <section class="fun-fact" data-aos="fade-up" data-aos-delay="400" style="background: #fff7e6; padding: 40px 0; margin-top: 40px; border-radius: 16px;">
+    <div class="container" style="text-align: center;">
+      <h2 style="color: #ff9800; margin-bottom: 16px;">
+        <i class="fas fa-lightbulb"></i> Знаете ли вы?
+      </h2>
+      <p id="funFact" style="font-size: 1.2em; color: #333; margin-bottom: 0;">
+        Smart School помогает экономить до 40% времени на административные задачи!
+      </p>
+      <button id="nextFactBtn" class="btn-orange" style="margin-top: 20px;">Показать ещё факт</button>
+    </div>
+  </section>
+  <script>
+    const facts = [
+      "Smart School помогает экономить до 40% времени на административные задачи!",
+      "Более 500 школ уже используют Smart School в Казахстане.",
+      "Система поддерживает интеграцию с электронным дневником и расписанием.",
+      "Smart School защищает данные с помощью современных технологий безопасности.",
+      "Платформа доступна на всех устройствах — от ПК до смартфона."
+    ];
+    let factIndex = 0;
+    document.getElementById('nextFactBtn').addEventListener('click', function() {
+      factIndex = (factIndex + 1) % facts.length;
+      document.getElementById('funFact').textContent = facts[factIndex];
+    });
+  </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Smart School</h3>
+          <p>© 2025 Smart School. Все права защищены.<br>ТОО "Smart School", БИН 1234567890.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Навигация</h3>
+          <p><a href="about.html">О нас</a></p>
+          <p><a href="features.html">Функции</a></p>
+          <p><a href="contact.html">Контакты</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Контакты</h3>
+          <p><i class="fas fa-envelope"></i> support@smartschool.kz</p>
+          <p><i class="fas fa-phone"></i> +7 (727) 123-45-67</p>
+        </div>
+        <div class="footer-section">
+          <h3>Социальные сети</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
